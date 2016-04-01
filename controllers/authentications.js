@@ -62,52 +62,7 @@ function facebook(req, res) {
     });
 }
 
-function github(req, res) {
-  var params = {
-    client_id: process.env.GITHUB_API_KEY,
-    client_secret: process.env.GITHUB_API_SECRET,
-    code: req.body.code
-  };
-  request.post({
-    url: oauth.github.accessTokenUrl,
-    qs: params,
-    json: true
-  })
-  .then(function (response) {
-    return request.get({
-      url: oauth.github.profileUrl + "?access_token=" + response.access_token,
-      json: true,
-      headers: {'User-Agent': 'Request-Promise'}
-    });
-  })
-  .then(function (profile) {
-    return User.findOne({ email: profile.email })
-      .then(function (user) {
-        if(user) {
-          user.githubId = profile.id;
-          user.picture = user.picture || profile.avatar_url
-        } else {
-          user = new User({
-            githubId: profile.id,
-            name: profile.name,
-            picture: profile.avatar_url,
-            email: profile.email
-          });
-        }
-        return user.save();
-      })
-  })
-  .then(function (user) {
-    var payload = { _id: user._id, name: user.name, picture: user.picture };
-    var token = jwt.sign(payload, config.secret, { expiresIn: '24h'});
-    return res.send({ token: token, user: payload});
-  })
-  .catch(function (err) {
-    return res.status(500).json(err);
-  });
-}
 
 module.exports = {
-  facebook: facebook,
-  github: github
+  facebook: facebook
 };
