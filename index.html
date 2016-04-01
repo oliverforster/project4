@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Test App</title>
+    <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
+    <script src="/js/vendor/angular/angular.min.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/controllers/main.js" charset="utf-8"></script>
+    <script src="/js/services/apikeys.js"></script>
+  </head>
+  <body ng-controller="MainController as main">
+    <main class="container">
+      <div class="row">
+        <div class="thirds">
+        </div>
+        <div class="thirds">
+          <form ng-submit="main.newRequest()">
+            <input type="text" name="request" placeholder="new Request" ng-model="main.request.name">
+            <input type="submit" value="GO!!!" class="button">
+          </form>
+        </div>
+        <div class="thirds">
+          {{ main.request.name }}
+        </div>
+      </div>
+      <div class="row">
+        <ul>
+          <li ng-repeat="recomend in main.all">
+            {{ recomend.Name }}
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>

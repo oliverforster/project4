@@ -13,7 +13,7 @@ app.set("views", __dirname + "/views");
 app.use(express.static(__dirname + '/public'));
 
 // Connect to database
-mongoose.connect(databaseURL);
+mongoose.connect(config.databaseUrl);
 
 // Require routes
 var routes         = require('./config/routes');
@@ -26,6 +26,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', router);
 
 // Listen on the correct PORT
-app.listen(PORT, function() {;
-  console.log("Express got you fam on port " + PORT);
+app.listen(config.PORT, function() {;
+  console.log("Express got you fam on port " + config.PORT);
 });
