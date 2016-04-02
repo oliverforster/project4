@@ -23,15 +23,6 @@ function tasteKidGet(req, res) {
       cache[req.body.q] = response.Similar.Results;
       return res.status(200).json(cache[req.body.q]);
     });
-
-//     .get({
-//       url: "http://www.tastekid.com/api/similar?q=Silent+Witness&k=" + process.env.TASTEKID_API_KEY
-//     })
-//     .then({
-//       function (response) {
-//         return console.log(response);
-//       }
-//     })
 }
 
 

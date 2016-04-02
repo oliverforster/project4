@@ -17,8 +17,8 @@ function MainController($http, TASTEKID_API_KEY) {
       url: "http://localhost:3000/api/tastekid",
       data: this.request
     })
-    .then(function() {
-      console.log("PING!!!");
+    .then(function(response) {
+      console.log(response);
     })
     .catch(function(err) {
       console.error(err);
