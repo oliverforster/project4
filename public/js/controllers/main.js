@@ -13,10 +13,9 @@ function MainController($http, TASTEKID_API_KEY) {
     this.requestName = this.request.name;
     this.requestName.replace(/ /g, "+")
     $http
-    .get("https://www.tastekid.com/api/similar?q=" + this.requestName + '&verbose=1&k=' + TASTEKID_API_KEY)
-    .then(function(res) {
-      self.all = res.data.Similar.Results;
-      console.log(self.all);
+    .get("http://localhost:3000/api/tastekid")
+    .then(function() {
+      console.log("PING!!!");
     })
     .catch(function(err) {
       console.error(err);
