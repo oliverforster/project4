@@ -5,16 +5,18 @@ function tasteKidGet(req, res) {
 
   console.log(req.body.first, cache);
 
-  if(cache[req.body.q]) {
-    return res.status(200).json(cache[req.body.q]);
-  }
-  var first = req.body.first
-  var second = req.body.second
+  var first = req.body.first;
+  var second = req.body.second;
 
   if(req.body.second) {
-    var search = first, second
+    console.log("Ping");
+    var search = first, second;
   } else {
-    var search = req.body.first
+    var search = req.body.first;
+  }
+
+  if(cache[search]) {
+    return res.status(200).json(cache[search]);
   }
 
   request
@@ -28,8 +30,9 @@ function tasteKidGet(req, res) {
       json: true
     })
     .then(function (response) {
-      cache[req.body.first] = response.Similar.Results;
-      return res.status(200).json(cache[req.body.q]);
+      console.log(search);
+      cache[search] = response.Similar.Results;
+      return res.status(200).json(cache[search]);
     });
 }
 
