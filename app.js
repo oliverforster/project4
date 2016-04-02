@@ -27,5 +27,5 @@ app.use('/', router);
 
 // Listen on the correct PORT
 app.listen(config.PORT, function() {;
-  console.log("Express got you fam on port " + config.PORT);
+  console.log("Express is listening on port " + config.PORT);
 });

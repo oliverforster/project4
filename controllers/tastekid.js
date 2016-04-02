@@ -1,29 +1,37 @@
 var request = require('request-promise');
+var cache = {};
 
-function tasteKidGet() {
+function tasteKidGet(req, res) {
+
+  console.log(req.body, cache);
+
+  if(cache[req.body.q]) {
+    return res.status(200).json(cache[req.body.q]);
+  }
+
   request
-    // .get({
-    //   url: "https://www.tastekid.com/read/api/similar?",
-    //   paramaters: {
-    //     q: "spooks",
-    //     info: 1,
-    //     k: process.env.TASTEKID_API_KEY
-    //   }
-    // })
-    // .then({
-    //   function (response) {
-    //     return console.log(response);
-    //   }
-    // })
-
     .get({
-      url: "http://www.tastekid.com/read/api/similar?q=spooks&verbose=1&k=" + process.env.TASTEKID_API_KEY
+      url: "https://www.tastekid.com/api/similar",
+      qs: {
+        q: req.body.q,
+        info: 1,
+        k: process.env.TASTEKID_API_KEY
+      },
+      json: true
     })
-    .then({
-      function (response) {
-        return console.log(response);
-      }
-    })
+    .then(function (response) {
+      cache[req.body.q] = response.Similar.Results;
+      return res.status(200).json(cache[req.body.q]);
+    });
+
+//     .get({
+//       url: "http://www.tastekid.com/api/similar?q=Silent+Witness&k=" + process.env.TASTEKID_API_KEY
+//     })
+//     .then({
+//       function (response) {
+//         return console.log(response);
+//       }
+//     })
 }
 
 

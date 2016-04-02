@@ -8,6 +8,6 @@ router.get('/', function (req, res) {
 
 router.post('/auth/facebook', authController.facebook);
 
-router.get('/api/tastekid', tasteController.get)
+router.post('/api/tastekid', tasteController.get)
 
 module.exports = router;
