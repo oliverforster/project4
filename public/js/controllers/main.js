@@ -7,11 +7,8 @@ function MainController($http, TASTEKID_API_KEY) {
 
   self.all = []
   this.request = {};
-  this.requestName = this.request.name;
 
   self.newRequest = function () {
-    this.requestName = this.request.name;
-    this.requestName.replace(/ /g, "+")
     $http({
       method: "POST",
       url: "http://localhost:3000/api/tastekid",
