@@ -13,7 +13,7 @@ function tasteKidGet(req, res) {
     .get({
       url: "https://www.tastekid.com/api/similar",
       qs: {
-        q: req.body.q,
+        q: req.body.name,
         info: 1,
         k: process.env.TASTEKID_API_KEY
       },

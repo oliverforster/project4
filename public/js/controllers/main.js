@@ -12,8 +12,11 @@ function MainController($http, TASTEKID_API_KEY) {
   self.newRequest = function () {
     this.requestName = this.request.name;
     this.requestName.replace(/ /g, "+")
-    $http
-    .post("http://localhost:3000/api/tastekid")
+    $http({
+      method: "POST",
+      url: "http://localhost:3000/api/tastekid",
+      data: this.request
+    })
     .then(function() {
       console.log("PING!!!");
     })
