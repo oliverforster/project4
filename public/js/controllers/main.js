@@ -1,8 +1,8 @@
 angular.module('testApp')
   .controller('MainController', MainController);
 
-MainController.$inject = ['$http', 'TASTEKID_API_KEY'];
-function MainController($http, TASTEKID_API_KEY) {
+MainController.$inject = ['$http', 'TASTEKID_API_KEY', 'tokenService', '$auth'];
+function MainController($http, TASTEKID_API_KEY, tokenService, $auth) {
   var self = this;
 
   self.all = []
@@ -20,5 +20,23 @@ function MainController($http, TASTEKID_API_KEY) {
     .catch(function(err) {
       console.error(err);
     });
+  }
+
+  this.isLoggedIn = function() {
+    return !!tokenService.getToken();
+  }
+
+  this.currentUser = tokenService.getUser();
+
+  this.authenticate = function(provider) {
+    $auth.authenticate(provider)
+      .then(function() {
+        self.currentUser = tokenService.getUser();
+      });
+  }
+
+  this.logout = function() {
+    tokenService.removeToken();
+    this.currentUser = null;
   }
 }

@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <title>Test App</title>
     <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
     <script src="/js/vendor/angular/angular.min.js"></script>
     <script src="/js/vendor/satellizer/satellizer.min.js" charset="utf-8"></script>
     <script src="/js/vendor/angular-jwt/dist/angular-jwt.min.js"></script>
@@ -41,11 +45,9 @@
         </div>
       </div>
       <div class="row">
-        <ul>
-          <li ng-repeat="recomend in main.all">
-            {{ recomend.Name }}
-          </li>
-        </ul>
+        <div class="thirds">
+          <button class="facebook" ng-click="main.authenticate('facebook')"><i class="fa fa-facebook-square"></i> Sign in with Facebook</button>
+        </div>
       </div>
     </main>
   </body>
