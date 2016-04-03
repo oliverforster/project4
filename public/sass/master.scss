@@ -6,7 +6,7 @@ body {
   width: 90vw;
   height: 100vh;
   margin: 0 auto;
-  margin-top: 12vh;
+  margin-top: 60px;
 }
 
 .row {
@@ -35,9 +35,43 @@ input {
 
 nav {
   width: 100%;
-  background-color: red;
-  height: 10vh;
+  background-color: orange;
+  height: 60px;
   position: fixed;
   left: 0px;
   top: 0px;
+
+  div {
+    // border: 1px solid black;
+    position: absolute;
+    height: 100%;
+    width: 48%;
+    line-height: 60px;
+  }
+  .navRight {
+    right: 0px;
+    text-align: right;
+    div {
+      display: inline-block;
+      position: relative;
+      width: 15%;
+      text-align: center;
+    }
+    div:hover {
+      background-color: yellow;
+    }
+  }
+  .navLeft {
+    div {
+      display: inline-block;
+      width: 15%;
+      position: relative;
+      text-align: center;
+      margin: 0px;
+      margin-left: 0px;
+    }
+    div:hover {
+      background-color: yellow;
+    }
+  }
 }
