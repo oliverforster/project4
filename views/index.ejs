@@ -2,9 +2,10 @@
 <html ng-app="testApp">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Test App</title>
     <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
@@ -24,9 +25,12 @@
         <div class="tv">TV</div>
         <div class="food">Food</div>
       </div>
-      <div class="navRight">
-        <div class="user">User</div>
-        <div class="logout">Logout</div>
+      <div class="navRight" ng-show="main.currentUser">
+        <div class="user">{{ main.currentUser.name}}</div>
+        <div class="logout" ng-click="main.logout()">Logout</div>
+      </div>
+      <div class="navRight" ng-show="!main.currentUser">
+        <div class="facebook" ng-click="main.authenticate('facebook')"><i class="fa fa-facebook-square"></i> Sign in</div>
       </div>
     </nav>
     <main class="container">
@@ -46,7 +50,6 @@
       </div>
       <div class="row">
         <div class="thirds">
-          <button class="facebook" ng-click="main.authenticate('facebook')"><i class="fa fa-facebook-square"></i> Sign in with Facebook</button>
         </div>
       </div>
     </main>

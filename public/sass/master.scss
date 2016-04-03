@@ -1,7 +1,7 @@
 body {
   background-color: brown;
   font-family: 'Raleway', sans-serif;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .container {
@@ -14,6 +14,7 @@ body {
 .row {
   width: 100%;
   margin-top: 50px;
+  display: inline-block;
 }
 
 .thirds {
@@ -45,11 +46,15 @@ nav {
   left: 0px;
   top: 0px;
 
+  i {
+    color: #3B5998;
+  }
+
   div {
     // border: 1px solid black;
     position: absolute;
     height: 100%;
-    width: 48%;
+    width: 60%;
     line-height: 60px;
   }
   .navRight {
@@ -58,24 +63,32 @@ nav {
     div {
       display: inline-block;
       position: relative;
-      width: 15%;
+      width: auto;
       text-align: center;
+      padding: 0 15px;
     }
     div:hover {
       background-color: yellow;
+      cursor: pointer;
+      color: purple;
+    }
+    .user {
+      width: auto;
     }
   }
   .navLeft {
     div {
       display: inline-block;
-      width: 15%;
+      width: auto;
       position: relative;
       text-align: center;
       margin: 0px;
-      margin-left: 0px;
+      padding: 0 15px;
     }
     div:hover {
       background-color: yellow;
+      cursor: pointer;
+      color: purple;
     }
   }
 }

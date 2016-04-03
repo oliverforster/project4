@@ -32,6 +32,7 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth) {
     $auth.authenticate(provider)
       .then(function() {
         self.currentUser = tokenService.getUser();
+        console.log(self.currentUser);
       });
   }
 
