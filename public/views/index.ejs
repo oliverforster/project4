@@ -23,8 +23,8 @@
     <nav>
       <div class="navLeft">
         <div class="logo">Logo</div>
-        <div class="tv">Television</div>
-        <div class="food">Food</div>
+        <div class="tv" ui-sref="television">Television</div>
+        <div class="food" ui-sref="food">Food</div>
       </div>
       <div class="navRight" ng-show="main.currentUser">
         <div class="user">{{ main.currentUser.name}}</div>
@@ -34,23 +34,8 @@
         <div class="facebook" ng-click="main.authenticate('facebook')"><i class="fa fa-facebook-square"></i> Sign in</div>
       </div>
     </nav>
-    <main class="container">
-      <div class="row">
-        <div class="thirds">
-        </div>
-        <div class="thirds">
-          <form ng-submit="main.newRequest()">
-            <input type="text" name="request" placeholder="First" ng-model="main.request.first">
-            <input type="text" name="request" placeholder="Second" ng-model="main.request.second">
-            <input type="submit" value="GO!!!" class="button">
-          </form>
-        </div>
-        <div class="thirds">
-          {{ main.request.first }}
-          {{ main.request.second }}
-        </div>
-      </div>
-      </div>
+    <main class="container" ui-view>
+
     </main>
   </body>
 </html>

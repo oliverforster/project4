@@ -9,7 +9,7 @@ var config         = require('./config/app');
 
 // Set default view engine and views directory
 app.set("view engine", "ejs");
-app.set("views", __dirname + "/views");
+app.set("views", __dirname + "/public/views");
 app.use(express.static(__dirname + '/public'));
 
 // Connect to database
