@@ -23,8 +23,8 @@
     <nav>
       <div class="navLeft">
         <div class="logo" ui-sref="home">Logo</div>
-        <div class="tv" ui-sref="television">Television</div>
-        <div class="food" ui-sref="food">Food</div>
+        <div class="tv" ui-sref="television" ui-sref-active="active">Television</div>
+        <div class="food" ui-sref="food" ui-sref-active="active">Food</div>
       </div>
       <div class="navRight" ng-show="main.currentUser">
         <div class="user">{{ main.currentUser.name}}</div>
