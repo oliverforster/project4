@@ -10,7 +10,7 @@ function tasteKidGet(req, res) {
 
   if(req.body.second) {
     console.log("Ping");
-    var search = first, second;
+    var search = [first, second].join(", ");
   } else {
     var search = req.body.first;
   }
