@@ -1,6 +1,7 @@
 var router          = require('express').Router();
 var authController  = require('../controllers/authentications');
 var tasteController = require('../controllers/tastekid');
+var usersController = require('../controllers/users')
 
 router.get('/', function (req, res) {
   res.render('index')

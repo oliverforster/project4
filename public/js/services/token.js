@@ -1,4 +1,4 @@
-angular.module('satellizerApp')
+angular.module('testApp')
   .service('tokenService', TokenService);
 
 TokenService.$inject = ['$window', 'jwtHelper'];
