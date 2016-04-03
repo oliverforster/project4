@@ -18,7 +18,7 @@ function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: '/views/television.html'
+      templateUrl: '/views/index.ejs'
     })
     .state('television', {
       url: '/television',
