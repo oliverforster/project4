@@ -1,8 +1,8 @@
 angular.module('testApp')
   .controller('MainController', MainController);
 
-MainController.$inject = ['$http', 'TASTEKID_API_KEY', 'tokenService', '$auth'];
-function MainController($http, TASTEKID_API_KEY, tokenService, $auth) {
+MainController.$inject = ['$http', 'TASTEKID_API_KEY', 'tokenService', '$auth', 'User'];
+function MainController($http, TASTEKID_API_KEY, tokenService, $auth, User) {
   var self = this;
 
   self.all = []
