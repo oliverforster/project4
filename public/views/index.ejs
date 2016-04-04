@@ -34,7 +34,7 @@
         <div class="food" ui-sref="food" ui-sref-active="active">Food</div>
       </div>
       <div class="navRight" ng-show="main.currentUser">
-        <div class="user hidden-xs">{{ main.currentUser.name}}</div>
+        <div class="user hidden-xs" ui-sref="user">{{ main.currentUser.name}}</div>
         <div class="logout" ng-click="main.logout()">Logout</div>
       </div>
       <div class="navRight" ng-show="!main.currentUser">
