@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Test App</title>
+
+    <link rel="stylesheet" href="/js/vendor/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -22,20 +24,20 @@
   <body ng-controller="MainController as main">
     <nav>
       <div class="navLeft">
-        <div class="logo" ui-sref="home">Logo</div>
+        <div class="logo hidden-xs" ui-sref="home">Logo</div>
         <div class="tv" ui-sref="television" ui-sref-active="active">Television</div>
         <div class="food" ui-sref="food" ui-sref-active="active">Food</div>
       </div>
       <div class="navRight" ng-show="main.currentUser">
-        <div class="user">{{ main.currentUser.name}}</div>
+        <div class="user hidden-xs">{{ main.currentUser.name}}</div>
         <div class="logout" ng-click="main.logout()">Logout</div>
       </div>
       <div class="navRight" ng-show="!main.currentUser">
         <div class="facebook" ng-click="main.authenticate('facebook')"><i class="fa fa-facebook-square"></i> Sign in</div>
       </div>
     </nav>
-    <main class="container" ui-view>
+    <div class="container" ui-view>
 
-    </main>
+    </div>
   </body>
 </html>

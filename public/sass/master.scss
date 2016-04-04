@@ -5,26 +5,8 @@ body {
 }
 
 .container {
-  width: 90vw;
-  height: 100vh;
-  margin: 0 auto;
-  margin-top: 60px;
-}
-
-.row {
-  width: 100%;
-  display: inline-block;
-}
-.half {
-  display: inline-block;
-  width: 49%;
-  text-align: center;
-}
-
-.thirds {
-  display: inline-block;
-  width: 30%;
-  text-align: center;
+  width: 95vw;
+  margin-top: 70px;
 }
 
 input {
@@ -57,7 +39,7 @@ nav {
   div {
     position: absolute;
     height: 100%;
-    width: 60%;
+    width: 70%;
     line-height: 60px;
   }
   .navRight {
@@ -101,4 +83,9 @@ nav {
 
 .active {
   background-color: yellow;
+}
+.row {
+  div {
+    text-align: center;
+  }
 }
