@@ -17,7 +17,9 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth) {
     })
     .then(function(response) {
       console.log(response.data);
-      self.results.push(response.data);
+      response.data.forEach(function(dataItem){
+        self.results.push(dataItem);
+      })
     })
     .catch(function(err) {
       console.error(err);
