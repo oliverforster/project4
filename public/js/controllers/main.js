@@ -16,6 +16,8 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth) {
       data: this.request
     })
     .then(function(response) {
+      self.results = [];
+      self.request = {};
       console.log(response.data);
       response.data.forEach(function(dataItem){
         self.results.push(dataItem);
