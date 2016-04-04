@@ -8,13 +8,16 @@ function tasteKidGet(req, res) {
   var second = req.body.request.second;
   var userId = req.body.user._id
 
-
   if(req.body.request.second) {
     console.log("Ping");
     var search = [first, second].join(", ");
   } else {
     var search = req.body.request.first;
   }
+
+  User.findByIdAndUpdate(userId, { $push: { searchHistory: search }}, { new: true }, function(err, data){
+    if(err)  res.status(500).json({ message: err });
+  });
 
   if(cache[search]) {
     return res.status(200).json(cache[search]);
