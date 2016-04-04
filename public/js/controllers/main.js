@@ -24,7 +24,8 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth, User) {
       response.data.forEach(function(dataItem){
         self.results.push(dataItem);
       })
-      self.searchHistory = User.query();
+      self.searchHistory = User.get({id: self.currentUser._id});
+      console.log(self.searchHistory);
     })
     .catch(function(err) {
       console.error(err);
