@@ -8,7 +8,7 @@ function Youtube($sce) {
       restrict: 'EA',
       scope: { code:'=' },
       replace: true,
-      template: '<iframe width="560" height="315" src="{{url}}" frameborder="0" allowfullscreen></iframe>',
+      template: '<iframe class="video" width="560" height="315" src="{{url}}" frameborder="0" allowfullscreen></iframe>',
       link: function (scope) {
           scope.$watch('code', function (newVal) {
              if (newVal) {
@@ -18,3 +18,19 @@ function Youtube($sce) {
       }
     };
   }
+
+
+  // controller: function(scope) {
+  //   scope.openFancybox = function (url) {
+  //     $http.get(url).then(function(response) {
+  //       if (response.status == 200) {
+  //
+  //         var template = angular.element(response.data);
+  //         var compiledTemplate = $compile(template);
+  //         compiledTemplate($scope);
+  //
+  //         $.fancybox.open({ content: template, type: 'html' });
+  //         }
+  //       });
+  //     }
+  //   }
