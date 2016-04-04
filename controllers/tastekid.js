@@ -1,18 +1,19 @@
 var request = require('request-promise');
+var User    = require('../models/user')
 var cache = {};
 
 function tasteKidGet(req, res) {
 
-  console.log(req.body.first, cache);
+  var first = req.body.request.first;
+  var second = req.body.request.second;
+  var userId = req.body.user._id
 
-  var first = req.body.first;
-  var second = req.body.second;
 
-  if(req.body.second) {
+  if(req.body.request.second) {
     console.log("Ping");
     var search = [first, second].join(", ");
   } else {
-    var search = req.body.first;
+    var search = req.body.request.first;
   }
 
   if(cache[search]) {

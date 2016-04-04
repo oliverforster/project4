@@ -14,7 +14,7 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth) {
     $http({
       method: "POST",
       url: "http://localhost:3000/api/tastekid",
-      data: this.request
+      data: {request: this.request, user: this.currentUser}
     })
     .then(function(response) {
       self.results = [];
