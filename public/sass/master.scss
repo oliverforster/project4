@@ -9,19 +9,24 @@ body {
   margin-top: 70px;
 }
 
-input {
-  background-color: #55e4fc;
-  border: 0px;
-  color: #ec62fc;
-  border-radius: 2px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
-}
+form {
+  legend {
+    color: #eaeaea;
+  }
+  input {
+    background-color: #55e4fc;
+    border: 0px;
+    color: #ec62fc;
+    border-radius: 2px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+  }
 
-.button {
-  background-color: #ec62fc;
-  color: #55e4fc;
-  border-radius: 100%;
+  .button {
+    background-color: #ec62fc;
+    color: #55e4fc;
+    border-radius: 100%;
+  }
 }
 
 nav {
