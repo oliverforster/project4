@@ -21,6 +21,7 @@
     "angular-jwt": "^0.0.9",
     "angular-ui-router": "ui-router#^0.2.18",
     "bootstrap": "^3.3.6",
-    "angular-youtube-mb": "^1.1.1"
+    "angular-youtube-mb": "^1.1.1",
+    "fancybox": "^2.1.5"
   }
 }
