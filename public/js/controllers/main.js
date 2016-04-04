@@ -9,7 +9,6 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth, User) {
   this.request = {};
   self.results = [];
   this.video = null;
-  self.searchHistory = [];
 
   self.newRequest = function () {
     $http({
@@ -24,10 +23,6 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth, User) {
       response.data.forEach(function(dataItem){
         self.results.push(dataItem);
       })
-      User.get({id: self.currentUser._id}).$promise.then(function (user) {
-        self.searchHistory = user.searchHistory;
-      });
-      console.log(self.searchHistory);
     })
     .catch(function(err) {
       console.error(err);
