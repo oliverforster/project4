@@ -23,8 +23,8 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth, User) {
       console.log(response.data);
       response.data.forEach(function(dataItem){
         self.results.push(dataItem);
-        self.searchHistory = User.query();
       })
+      self.searchHistory = User.query();
     })
     .catch(function(err) {
       console.error(err);

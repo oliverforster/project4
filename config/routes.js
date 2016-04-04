@@ -9,6 +9,8 @@ router.get('/', function (req, res) {
 
 router.post('/auth/facebook', authController.facebook);
 
+router.route('/users')
+  .get(usersController.index)
 
 router.route('/users/:id')
   .get(usersController.show)
