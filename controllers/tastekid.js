@@ -15,13 +15,13 @@ function tasteKidGet(req, res) {
     var search = req.body.request.first;
   }
 
-  User.findByIdAndUpdate(userId, { $push: { searchHistory: search }}, { new: true }, function(err, data){
-    if(err)  res.status(500).json({ message: err });
-  });
 
   if(cache[search]) {
     return res.status(200).json(cache[search]);
   }
+  User.findByIdAndUpdate(userId, { $push: { searchHistory: search }}, { new: true }, function(err, data){
+    if(err)  res.status(500).json({ message: err });
+  });
 
   request
     .get({
