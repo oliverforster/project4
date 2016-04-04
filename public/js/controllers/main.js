@@ -8,6 +8,7 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth) {
   self.all = []
   this.request = {};
   self.results = [];
+  this.video = null;
 
   self.newRequest = function () {
     $http({
@@ -46,5 +47,13 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth) {
     tokenService.removeToken();
     this.currentUser = null;
   }
+
+  this.showTrailer = function (result) {
+    main.video = true;
+    console.log(result.yID);
+    main.trailer = result.yID;
+  }
+
+
   return this;
 }
