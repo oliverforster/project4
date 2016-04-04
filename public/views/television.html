@@ -5,8 +5,6 @@
       <form ng-submit="main.newRequest()">
         <div class="form-group">
           <input type="text" name="request" placeholder="First" ng-model="main.request.first">
-        </div>
-        <div class="form-group">
           <input type="text" name="request" placeholder="Second" ng-model="main.request.second">
         </div>
         <div class="form-group">
@@ -30,6 +28,6 @@
   </div>
 </section>
 <section ng-if="main.video">
-  <div class="closeVideo"><i class="fa fa-times-circle"></i></div>
+  <div class="closeVideo" ng-click="main.video=false"><i class="fa fa-times-circle"></i></div>
   <youtube code="main.trailer"></youtube>
 </section>
