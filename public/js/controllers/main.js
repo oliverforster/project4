@@ -49,9 +49,9 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth) {
   }
 
   this.showTrailer = function (result) {
-    main.video = true;
+    this.video = true;
     console.log(result.yID);
-    main.trailer = result.yID;
+    this.trailer = result.yID;
   }
 
 

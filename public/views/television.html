@@ -15,7 +15,7 @@
   </div>
   <div class="col-md-4"></div>
 </div>
-<section ng-show="!main.video">
+<section ng-if="!main.video">
   <div class="row">
     <div class="col-sm-6 col-md-4" ng-repeat="result in main.results">
       <div class="thumbnail">
@@ -28,6 +28,6 @@
     </div>
   </div>
 </section>
-<section ng-show="main.video">
+<section ng-if="main.video">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ main.trailer}}" frameborder="0" allowfullscreen></iframe>
 </section>
