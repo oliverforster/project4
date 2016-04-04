@@ -7,6 +7,7 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth) {
 
   self.all = []
   this.request = {};
+  this.results = [];
 
   self.newRequest = function () {
     $http({
@@ -15,7 +16,7 @@ function MainController($http, TASTEKID_API_KEY, tokenService, $auth) {
       data: this.request
     })
     .then(function(response) {
-      console.log(response);
+      this.results = this.results.push(response.data);
     })
     .catch(function(err) {
       console.error(err);
