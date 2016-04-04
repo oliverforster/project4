@@ -28,6 +28,10 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/food',
       templateUrl: '/views/food.html'
     })
+    .state('user', {
+      url: '/profile',
+      templateUrl: '/views/user.html'
+    })
 
   $urlRouterProvider.otherwise('/');
 }
