@@ -15,10 +15,15 @@
   </div>
   <div class="col-md-4"></div>
 </div>
+
 <div class="row">
-  <ul>
-    <li ng-repeat="result in main.results">
-      {{ result.Name }}
-    </li>
-  </ul>
+  <div class="col-sm-6 col-md-4" ng-repeat="result in main.results">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>{{ result.Name }}</h3>
+        <p>{{ result.wTeaser }}</p>
+        <p><a href="#" class="btn btn-primary" role="button">More</a> <a href="#" class="btn btn-default" role="button">Trailer</a></p>
+      </div>
+    </div>
+  </div>
 </div>
