@@ -13,8 +13,7 @@ function FoodController($http) {
       data: {request: this.search, user: this.currentUser}
     })
     .then(function(response) {
-      console.log("ping!!");
-      })
+      console.log(response);
     })
     .catch(function(err) {
       console.error(err);
