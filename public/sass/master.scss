@@ -125,3 +125,13 @@ nav {
   min-height: 200px;
   background-color: rgba(240, 240, 240, 0.7);;
 }
+  .header {
+    margin: auto;
+    position: relative;
+    text-align: center;
+    margin-top: 150px;
+    h1 {
+      font-size: 50px;
+      color: #e6e6e6;
+    }
+  }
