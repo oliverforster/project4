@@ -1,10 +1,10 @@
-<form ng-submit="main.newRequest()">
+<form ng-submit="food.newRequest()">
   <legend>Show or Film Like?</legend>
   <div class="form-group">
-    <input type="text" name="request" placeholder="First" ng-model="main.request.first">
-    <input type="text" name="request" placeholder="Second" ng-model="main.request.second">
+    <input type="text" name="request" placeholder="First" ng-model="food.search">
   </div>
   <div class="form-group">
     <input type="submit" value="GO!!!" class="button">
   </div>
 </form>
+{{ food.search }}
