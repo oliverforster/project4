@@ -3,3 +3,5 @@ angular.module('testApp')
 
 FoodController.$inject = ['$http'];
 function FoodController($http) {
+  
+}
