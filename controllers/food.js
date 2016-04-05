@@ -12,7 +12,8 @@ function googlePlacesGet(req, res) {
       url: "https://maps.googleapis.com/maps/api/geocode/json?address=sw182dz&key="+ process.env.GOOGLE_API_KEY
     })
     .then(function (response) {
-      return res.status(200).json(response);
+      console.log(response);
+      return res.status(200).send(data);
     });
 }
 
