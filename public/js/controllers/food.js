@@ -5,6 +5,7 @@ FoodController.$inject = ['$http'];
 function FoodController($http) {
   var self = this;
   this.postcode = null;
+  self.results = [];
 
   self.getFood = function () {
     $http({
@@ -13,7 +14,12 @@ function FoodController($http) {
       params: { postcode: self.postcode }
     })
     .then(function(response) {
-
+      console.log(response);
+      self.postcode = null;
+      self.results = [];
+      response.data.forEach(function(dataItem){
+        self.results.push(dataItem);
+      })
     })
     .catch(function(err) {
       console.error(err);
