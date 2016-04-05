@@ -2,30 +2,42 @@ var request = require('request-promise');
 var User    = require('../models/user')
 var cache   = {};
 
-function googlePlacesGet(req, res) {
+function index(req, res) {
   var params = {
-    address: req.body.postcode,
+    address: req.query.postcode,
     key: process.env.GOOGLE_API_KEY
   };
+
   request
     .get({
-      url: "https://maps.googleapis.com/maps/api/geocode/json?address=sw182dz&key="+ process.env.GOOGLE_API_KEY
+      url: "https://maps.googleapis.com/maps/api/geocode/json",
+      qs: params,
+      json: true
     })
-    .then(function (response) {
-      console.log(response);
-      return res.status(200).send(response);
+    .then(function(response) {
+      if(response.results.length === 0) {
+        return res.status(404).json({ message: "No data found for that postcode" })
+      }
+      return request.get({
+        url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json",
+        qs: {
+          location: response.results[0].geometry.location.lat + ',' + response.results[0].geometry.location.lng,
+          radius: 1000,
+          key: process.env.GOOGLE_API_KEY,
+          type: 'meal_takeaway'
+        },
+        json: true
+      });
+    })
+    .then(function(response) {
+      if(response.results.length === 0) {
+        return res.status(404).json({ message: "No data found for that postcode" })
+      }
+      
+      return res.status(200).json(response.results);
     });
 }
 
-function foodGet(req, res) {
-  var params = {
-    lat: req.body.lat,
-    lng: req.body.lng
-  }
-  return res.status(200).send(params);
-}
-
 module.exports = {
-  get: googlePlacesGet,
-  foodGet: foodGet
+  index: index
 }

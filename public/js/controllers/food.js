@@ -6,23 +6,14 @@ function FoodController($http) {
   var self = this;
   this.postcode = null;
 
-  self.newRequest = function () {
+  self.getFood = function () {
     $http({
-      method: "POST",
-      url: "http://localhost:3000/api/location",
-      data: {postcode: this.postcode}
+      method: "GET",
+      url: "http://localhost:3000/api/food",
+      params: { postcode: self.postcode }
     })
     .then(function(response) {
-      this.lat = response.data.results[0].geometry.location.lat;
-      this.lng = response.data.results[0].geometry.location.lng;
-      $http({
-        method: "POST",
-        url: "http://localhost:3000/api/food",
-        data: {lat: this.lat, lng: this.lng}
-      })
-      .then(function (response) {
-        console.log(response);
-      })
+
     })
     .catch(function(err) {
       console.error(err);
