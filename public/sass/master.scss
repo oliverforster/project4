@@ -134,10 +134,8 @@ nav {
       font-size: 50px;
       margin: 0px;
       color: #e6e6e6;
-      button {
-        width: inherit;
-        background-color: transparent;
-        font-size: 30px;
-      }
+    }
+    h1:hover {
+      cursor: pointer;
     }
   }
