@@ -4,13 +4,12 @@ var cache   = {};
 
 function googlePlacesGet(req, res) {
   var params = {
-    adress: req.body.postcode,
+    address: req.body.postcode,
     key: process.env.GOOGLE_API_KEY
   };
   request
     .get({
-      url: "http://maps.googleapis.com/maps/api/geocode/json/",
-      qs: params
+      url: "https://maps.googleapis.com/maps/api/geocode/json?address=sw182dz&key="+ process.env.GOOGLE_API_KEY
     })
     .then(function (response) {
       return res.status(200).json(response);
