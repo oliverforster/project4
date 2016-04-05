@@ -6,7 +6,11 @@ body {
 
 .container {
   width: 95vw;
+  height: 100vh;
   margin-top: 70px;
+  background-image: url(/images/background.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 form {
