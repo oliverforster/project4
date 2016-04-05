@@ -126,12 +126,18 @@ nav {
   background-color: rgba(240, 240, 240, 0.7);;
 }
   .header {
-    margin: auto;
+    margin: 0 auto;
     position: relative;
     text-align: center;
     margin-top: 150px;
     h1 {
       font-size: 50px;
+      margin: 0px;
       color: #e6e6e6;
+      button {
+        width: inherit;
+        background-color: transparent;
+        font-size: 30px;
+      }
     }
   }
