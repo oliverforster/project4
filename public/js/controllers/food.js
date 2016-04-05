@@ -10,7 +10,7 @@ function FoodController($http) {
     $http({
       method: "POST",
       url: "http://localhost:3000/api/food",
-      data: {request: this.postcode}
+      data: {postcode: this.postcode}
     })
     .then(function(response) {
       console.log(response);

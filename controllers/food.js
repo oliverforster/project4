@@ -3,8 +3,18 @@ var User    = require('../models/user')
 var cache   = {};
 
 function googlePlacesGet(req, res) {
-  console.log(req.body);
-  return res.status(200).json("got it")
+  var params = {
+    adress: req.body.postcode,
+    key: process.env.GOOGLE_API_KEY
+  };
+  request
+    .get({
+      url: "http://maps.googleapis.com/maps/api/geocode/json/",
+      qs: params
+    })
+    .then(function (response) {
+      return res.status(200).json(response);
+    });
 }
 
 module.exports = {
