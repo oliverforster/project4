@@ -19,6 +19,7 @@ router.route('/users/:id')
   .delete(usersController.delete);
 
 router.post('/api/tastekid', tasteController.get)
-router.post('/api/food', foodController.get)
+router.post('/api/location', foodController.get)
+router.post('/api/food', foodController.foodGet)
 
 module.exports = router;

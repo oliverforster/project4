@@ -13,10 +13,19 @@ function googlePlacesGet(req, res) {
     })
     .then(function (response) {
       console.log(response);
-      return res.status(200).send(data);
+      return res.status(200).send(response);
     });
 }
 
+function foodGet(req, res) {
+  var params = {
+    lat: req.body.lat,
+    lng: req.body.lng
+  }
+  return res.status(200).send(params);
+}
+
 module.exports = {
-  get: googlePlacesGet
+  get: googlePlacesGet,
+  foodGet: foodGet
 }

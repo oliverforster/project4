@@ -9,11 +9,20 @@ function FoodController($http) {
   self.newRequest = function () {
     $http({
       method: "POST",
-      url: "http://localhost:3000/api/food",
+      url: "http://localhost:3000/api/location",
       data: {postcode: this.postcode}
     })
     .then(function(response) {
-      console.log(response);
+      this.lat = response.data.results[0].geometry.location.lat;
+      this.lng = response.data.results[0].geometry.location.lng;
+      $http({
+        method: "POST",
+        url: "http://localhost:3000/api/food",
+        data: {lat: this.lat, lng: this.lng}
+      })
+      .then(function (response) {
+        console.log(response);
+      })
     })
     .catch(function(err) {
       console.error(err);
