@@ -134,8 +134,17 @@ nav {
       font-size: 50px;
       margin: 0px;
       color: #e6e6e6;
+      span {
+        opacity: 0;
+        transition: all 3s ease;
+      }
     }
     h1:hover {
       cursor: pointer;
+      color: darken(#e6e6e6, 15%);
+      span {
+        opacity: 1;
+        transition: all 3s ease;
+      }
     }
   }
