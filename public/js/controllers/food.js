@@ -9,8 +9,7 @@ function FoodController($http) {
   self.newRequest = function () {
     $http({
       method: "POST",
-      url: "http://localhost:3000/api/food",
-      data: {postcode: this.postcode}
+      url: "https://maps.googleapis.com/maps/api/geocode/json?address=sw182dz&key=AIzaSyC5sCyvvW4u4Ii7mQ1l00n17TraWDgtbKk"
     })
     .then(function(response) {
       console.log(response);
