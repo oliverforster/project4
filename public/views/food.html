@@ -1,1 +1,10 @@
-
+<form ng-submit="main.newRequest()">
+  <legend>Show or Film Like?</legend>
+  <div class="form-group">
+    <input type="text" name="request" placeholder="First" ng-model="main.request.first">
+    <input type="text" name="request" placeholder="Second" ng-model="main.request.second">
+  </div>
+  <div class="form-group">
+    <input type="submit" value="GO!!!" class="button">
+  </div>
+</form>
