@@ -1,11 +1,12 @@
 angular.module('testApp')
   .controller('FoodController', FoodController);
 
-FoodController.$inject = ['$http', 'tokenService'];
-function FoodController($http, tokenService) {
+FoodController.$inject = ['$http', 'tokenService', '$state'];
+function FoodController($http, tokenService, $state) {
   var self = this;
   this.postcode = null;
   self.results = [];
+  this.chosen = null;
 
   self.getFood = function () {
     this.currentUser = tokenService.getUser();
@@ -26,17 +27,9 @@ function FoodController($http, tokenService) {
       console.error(err);
     });
   }
-}
+  this.chooseFood = function (result) {
+    this.chosen = result;
+    $state.go('home')
 
-// self.newRequest = function () {
-//   $http({
-//     method: "POST",
-//     url: "https://maps.googleapis.com/maps/api/geocode/json?address=sw182dz&key=AIzaSyC5sCyvvW4u4Ii7mQ1l00n17TraWDgtbKk"
-//   })
-//   .then(function(response) {
-//     console.log(response);
-//   })
-//   .catch(function(err) {
-//     console.error(err);
-//   });
-// }
+  }
+}
