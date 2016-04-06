@@ -10,19 +10,14 @@ body {
   margin-top: 70px;
 }
 .backgroundImage {
-  // background-image: url(/images/background.gif);
-  // background-size: cover;
-  // background-repeat: repeat-y;
   position: absolute;
   top: 0px;
   width: 100vw;
-  // min-height: calc(100vh + 10px);
-
   background: url(/images/background.gif) no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 form {
@@ -35,7 +30,8 @@ form {
     color: #ec62fc;
     border-radius: 2px;
     font-family: 'Raleway', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
+    opacity: 0.8;
   }
 
   .button {
@@ -171,8 +167,8 @@ h3 {
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
-  background-color: rgba(49, 28, 8, 0.7);
-  border: 1px solid rgba(49, 28, 8, 1);
+  background-color: rgba(57, 35, 8, 0.7);
+  border: 1px solid rgba(57, 35, 8, 0.9);
   border-radius: 4px;
   -webkit-transition: border .2s ease-in-out;
   -o-transition: border .2s ease-in-out;
