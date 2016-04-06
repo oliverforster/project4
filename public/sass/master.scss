@@ -10,13 +10,19 @@ body {
   margin-top: 70px;
 }
 .backgroundImage {
-  background-image: url(/images/background.gif);
-  background-size: cover;
-  background-repeat: no-repeat;
+  // background-image: url(/images/background.gif);
+  // background-size: cover;
+  // background-repeat: repeat-y;
   position: absolute;
   top: 0px;
   width: 100vw;
-  min-height: calc(100vh + 10px);
+  // min-height: calc(100vh + 10px);
+
+  background: url(/images/background.gif) no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
 }
 
 form {

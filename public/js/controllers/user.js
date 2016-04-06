@@ -10,12 +10,24 @@ function UserController(User, $state, tokenService) {
   this.userPage = function () {
     this.currentUser = tokenService.getUser();
     User.get({id: self.currentUser._id}).$promise.then(function (user) {
-      self.tvHistory = user.tvHistory;
-      self.foodHistory = user.foodHistory;
-      console.log(self.foodHistory);
-      console.log(self.tvHistory);
+      user.tvHistory.forEach(function (tv) {
+        pushIfNew(self.tvHistory, tv)
+      })
+      user.foodHistory.forEach(function (food) {
+        pushIfNew(self.foodHistory, food)
+      })
     });
     $state.go('user')
+  }
+  this.userPage();
+
+  function pushIfNew(array, obj) {
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].toString() === obj) { // modify whatever property you need
+      return;
+    }
+  }
+  array.push(obj);
   }
 
 
