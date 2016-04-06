@@ -9,26 +9,36 @@
   <div class="row">
     <div class="col-md-6">
       <div class="row">
-        <div class="col-md-12"ng-repeat="tv in user.tvHistory">
-          <div class="history">
-            <p>{{ tv }}</p>
+        <div class="col-md-12">
+          <div class="thumbnail">
+            <div class="caption">
+              <h3>{{ main.chosen.Name }}</h3>
+              <p>{{ main.chosen.Type}}</p>
+              <p ng-show="teaser">{{ main.chosen.wTeaser }}</p>
+              <p><a class="btn btn-primary" ng-show="!teaser" role="button" ng-click="teaser=!teaser">Description</a>
+                <a class="btn btn-primary" ng-show="teaser" role="button" ng-click="teaser=!teaser">Less</a>
+                <a class="btn btn-default" ng-click="main.showTrailer(result)" role="button">Trailer</a>
+                <a class="btn btn-default" ng-click="main.chooseTv(result)" role="button">Choose</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="row">
-        <div class="thumbnail">
-          <div class="caption">
-            <h3>{{ food.chosen.name }}</h3>
-            <p>{{ food.chosen.open_now }}</p>
-            <p><a class="btn btn-primary" ng-show="!teaser" role="button" ng-click="teaser=!teaser">Description</a>
-               <a class="btn btn-primary" ng-show="teaser" role="button" ng-click="teaser=!teaser">Less</a>
-               <a class="btn btn-default" ng-click="main.showTrailer(result)" role="button">Trailer</a></p>
-               <a class="btn btn-default" ng-click="food.chooseFood(result)" role="button">Choose</a>
+        <div class="col-md-12">
+          <div class="thumbnail">
+            <div class="caption">
+              <h3>{{ food.chosen.name }}</h3>
+              <p>{{ food.chosen.open_now }}</p>
+              <p><a class="btn btn-primary" ng-show="!teaser" role="button" ng-click="teaser=!teaser">Description</a>
+                 <a class="btn btn-primary" ng-show="teaser" role="button" ng-click="teaser=!teaser">Less</a>
+                 <a class="btn btn-default" ng-click="main.showTrailer(result)" role="button">Trailer</a></p>
+                 <a class="btn btn-default" ng-click="food.chooseFood(result)" role="button">Choose</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 </section>
