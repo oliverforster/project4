@@ -1,4 +1,4 @@
-angular.module('testApp', ['satellizer', 'angular-jwt', 'ui.router', 'ngResource'])
+angular.module('testApp', ['satellizer', 'angular-jwt', 'ui.router', 'ngResource', 'angular.filter'])
 .constant('API_URL', 'http://localhost:3000')
 .config(Router)
 .config(oauthConfig)

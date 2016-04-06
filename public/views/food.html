@@ -19,12 +19,12 @@
 
 <div class="row">
   <div class="row" ng-repeat="result in food.results track by $index" ng-if="$index % 3 == 0">
-    <div class="col-sm-6 col-md-4" ng-repeat="i in [$index, $index + 1, $index + 2]">
+    <div class="col-sm-6 col-md-4" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-if="food.results[i] != null">
       <div class="thumb">
         <div class="caption">
-          <h3>{{ result.name }}</h3>
-          <p>Rating: {{ result.rating || "n/a" }}</p>
-          <p>{{ result.vicinity }}</p>
+          <h3>{{ result.name[i] }}</h3>
+          <p>Rating: {{ result.rating[i] || "n/a" }}</p>
+          <p>{{ result.vicinity[i] }}</p>
           <p><a class="btn btn-default" ng-click="food.chooseFood(result)" role="button">Choose</a>
           </p>
         </div>
