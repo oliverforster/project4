@@ -1,14 +1,15 @@
 angular.module('testApp')
   .controller('MainController', MainController);
 
-MainController.$inject = ['$http', 'tokenService', '$auth', 'User'];
-function MainController($http, tokenService, $auth, User) {
+MainController.$inject = ['$http', 'tokenService', '$auth', 'User', '$state'];
+function MainController($http, tokenService, $auth, User, $state) {
   var self = this;
 
   self.all = []
   this.request = {};
   self.results = [];
   this.video = null;
+  this.chosen = null;
 
   self.newRequest = function () {
     $http({
@@ -52,6 +53,11 @@ function MainController($http, tokenService, $auth, User) {
     this.video = true;
     console.log(result.yID);
     this.trailer = result.yID;
+  }
+  this.chooseTv = function (result) {
+    this.chosen = result;
+    $state.go('food')
+
   }
 
 
