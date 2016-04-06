@@ -1,7 +1,7 @@
 angular.module('testApp')
   .controller('FoodController', FoodController);
 
-FoodController.$inject = ['$http' 'tokenService'];
+FoodController.$inject = ['$http', 'tokenService'];
 function FoodController($http, tokenService) {
   var self = this;
   this.postcode = null;

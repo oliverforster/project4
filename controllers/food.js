@@ -2,8 +2,11 @@ var request = require('request-promise');
 var User    = require('../models/user')
 var cache   = {};
 
+
 function index(req, res) {
-  var params = {
+  var userId  = req.query.user._id
+  var address = req.query.postcode
+  var params  = {
     address: req.query.postcode,
     key: process.env.GOOGLE_API_KEY
   };
@@ -11,7 +14,7 @@ function index(req, res) {
   if(cache[req.query.postcode]) {
     return res.status(200).json(cache[req.query.postcode]);
   }
-  User.findByIdAndUpdate(userId, { $push: { tvHistory: search }}, { new: true }, function(err, data){
+  User.findByIdAndUpdate(userId, { $push: { foodHistory: address }}, { new: true }, function(err, data){
     if(err)  res.status(500).json({ message: err });
   });
 
