@@ -1,17 +1,18 @@
 angular.module('testApp')
   .controller('FoodController', FoodController);
 
-FoodController.$inject = ['$http'];
-function FoodController($http) {
+FoodController.$inject = ['$http' 'tokenService'];
+function FoodController($http, tokenService) {
   var self = this;
   this.postcode = null;
   self.results = [];
 
   self.getFood = function () {
+    this.currentUser = tokenService.getUser();
     $http({
       method: "GET",
       url: "http://localhost:3000/api/food",
-      params: { postcode: self.postcode }
+      params: { postcode: self.postcode, user: this.currentUser }
     })
     .then(function(response) {
       console.log(response);
