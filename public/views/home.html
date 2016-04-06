@@ -1,5 +1,31 @@
-<div class="box">
-  <div class="header">
-    <h1 ui-sref="television">R E A D Y ?<br><span>For The Greatest Night Ever</span></h1>
+<section ng-if="!food.chosen">
+  <div class="box">
+    <div class="header">
+      <h1 ui-sref="television">R E A D Y ?<br><span>For The Greatest Night Ever</span></h1>
+    </div>
   </div>
-</div>
+</section>
+<section>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <h3>Past Televison Searches</h3>
+        <div class="col-md-12"ng-repeat="tv in user.tvHistory">
+          <div class="history">
+            <p>{{ tv }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <h3>Past Postcode Searches</h3>
+        <div class="col-md-12"ng-repeat="postcode in user.foodHistory">
+          <div class="history">
+            <p>{{ postcode }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
