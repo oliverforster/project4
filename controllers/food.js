@@ -4,7 +4,9 @@ var cache   = {};
 
 
 function index(req, res) {
-  var userId  = req.query.user._id
+  console.log(req.query.postcode);
+  var userId  = req.query.user
+  console.log(userId);
   var address = req.query.postcode
   var params  = {
     address: req.query.postcode,
@@ -15,7 +17,8 @@ function index(req, res) {
     return res.status(200).json(cache[req.query.postcode]);
   }
   User.findByIdAndUpdate(userId, { $push: { foodHistory: address }}, { new: true }, function(err, data){
-    if(err)  res.status(500).json({ message: err });
+    if(err) res.status(500).json({ message: err });
+    // console.log(data.foodHistory);
   });
 
   request
