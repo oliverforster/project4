@@ -8,6 +8,13 @@ function index(req, res) {
     key: process.env.GOOGLE_API_KEY
   };
 
+  if(cache[req.query.postcode]) {
+    return res.status(200).json(cache[req.query.postcode]);
+  }
+  User.findByIdAndUpdate(userId, { $push: { tvHistory: search }}, { new: true }, function(err, data){
+    if(err)  res.status(500).json({ message: err });
+  });
+
   request
     .get({
       url: "https://maps.googleapis.com/maps/api/geocode/json",
@@ -33,8 +40,8 @@ function index(req, res) {
       if(response.results.length === 0) {
         return res.status(404).json({ message: "No data found for that postcode" })
       }
-      
-      return res.status(200).json(response.results);
+      cache[req.query.postcode] = response.results;
+      return res.status(200).json(cache[req.query.postcode]);
     });
 }
 
