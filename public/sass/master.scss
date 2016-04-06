@@ -125,26 +125,29 @@ nav {
   min-height: 200px;
   background-color: rgba(240, 240, 240, 0.7);;
 }
-  .header {
-    margin: 0 auto;
-    position: relative;
-    text-align: center;
-    margin-top: 150px;
-    h1 {
-      font-size: 50px;
-      margin: 0px;
-      color: #e6e6e6;
-      span {
-        opacity: 0;
-        transition: all 1s ease;
-      }
-    }
-    h1:hover {
-      cursor: pointer;
-      color: darken(#e6e6e6, 15%);
-      span {
-        opacity: 1;
-        transition: all 2s ease;
-      }
+.header {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  margin-top: 150px;
+  h1 {
+    font-size: 50px;
+    margin: 0px;
+    color: #e6e6e6;
+    span {
+      opacity: 0;
+      transition: all 1s ease;
     }
   }
+  h1:hover {
+    cursor: pointer;
+    color: darken(#e6e6e6, 15%);
+    span {
+      opacity: 1;
+      transition: all 2s ease;
+    }
+  }
+}
+.history {
+  background-color: red;
+}

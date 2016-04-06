@@ -1,13 +1,21 @@
 
 <div class="row">
   <div class="col-md-6">
-    <ul>
-      <li ng-repeat="item in user.tvHistory">{{ item }}</li>
-    </ul>
+    <div class="row">
+      <div class="col-md-12"ng-repeat="tv in user.tvHistory">
+        <div class="history">
+          {{ tv }}
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col-md-6">
-    <ul>
-      <li ng-repeat="item in user.foodHistory">{{ item }}</li>
-    </ul>
+    <div class="row">
+      <div class="col-md-12"ng-repeat="postcode in user.foodHistory">
+        <div class="history">
+          {{ postcode }}
+        </div>
+      </div>
+    </div>
   </div>
 </div>

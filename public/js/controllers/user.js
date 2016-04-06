@@ -12,6 +12,8 @@ function UserController(User, $state, tokenService) {
     User.get({id: self.currentUser._id}).$promise.then(function (user) {
       self.tvHistory = user.tvHistory;
       self.foodHistory = user.foodHistory;
+      console.log(self.foodHistory);
+      console.log(self.tvHistory);
     });
     $state.go('user')
   }
