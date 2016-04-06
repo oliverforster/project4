@@ -20,8 +20,11 @@ function FoodController($http, tokenService, $state) {
       self.postcode = null;
       self.results = [];
       response.data.forEach(function(dataItem){
-        self.results.push(dataItem);
+        if(!!dataItem.opening_hours.open_now) {
+          self.results.push(dataItem);
+        }
       })
+      console.log(self.results);
     })
     .catch(function(err) {
       console.error(err);
