@@ -16,7 +16,7 @@ function index(req, res) {
   if(cache[req.query.postcode]) {
     return res.status(200).json(cache[req.query.postcode]);
   }
-  User.findByIdAndUpdate(userId, { $push: { foodHistory: address }}, { new: true }, function(err, data){
+  User.findByIdAndUpdate(userId, { $push: { foodHistory: address.toString() }}, { new: true }, function(err, data){
     if(err) res.status(500).json({ message: err });
     // console.log(data.foodHistory);
   });
