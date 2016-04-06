@@ -126,10 +126,6 @@ nav {
 .closeVideo:hover {
   cursor: pointer;
 }
-.thumbnail {
-  min-height: 200px;
-  background-color: rgba(240, 240, 240, 0.7);;
-}
 .header {
   margin: 0 auto;
   position: relative;
@@ -175,16 +171,16 @@ h3 {
 //   transition: border .2s ease-in-out;
 //   color: darken(#e6e6e6, 15%);
 // }
-// .thumbnailFood {
-//   display: block;
-//   padding: 4px;
-//   margin-bottom: 20px;
-//   line-height: 1.42857143;
-//   background-color: rgba(57, 35, 8, 0.7);
-//   border: 1px solid rgba(57, 35, 8, 0.9);
-//   border-radius: 4px;
-//   -webkit-transition: border .2s ease-in-out;
-//   -o-transition: border .2s ease-in-out;
-//   transition: border .2s ease-in-out;
-//   color: darken(#e6e6e6, 15%);
-// }
+.thumb {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: rgba(57, 35, 8, 0.7);
+  border: 1px solid rgba(57, 35, 8, 0.9);
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+  -o-transition: border .2s ease-in-out;
+  transition: border .2s ease-in-out;
+  color: darken(#e6e6e6, 15%);
+}
