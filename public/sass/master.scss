@@ -60,6 +60,8 @@ nav {
     line-height: 60px;
   }
   .navRight {
+    width: 40%;
+    z-index: 2;
     right: 0px;
     text-align: right;
     div {
@@ -79,6 +81,7 @@ nav {
     }
   }
   .navLeft {
+    width: 100%;
     div {
       display: inline-block;
       width: auto;
@@ -137,6 +140,7 @@ nav {
     span {
       opacity: 0;
       transition: all 1s ease;
+      font-size: 30px;
     }
   }
   h1:hover {
@@ -150,4 +154,7 @@ nav {
 }
 .history {
   background-color: red;
+}
+h3 {
+  color: #e6e6e6;
 }
