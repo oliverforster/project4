@@ -166,25 +166,13 @@ nav {
 h3 {
   color: #e6e6e6;
 }
-// .userThumbnail {
-//   display: block;
-//   padding: 4px;
-//   margin-bottom: 20px;
-//   line-height: 1.42857143;
-//   background-color: rgba(57, 35, 8, 0.7);
-//   border: 1px solid rgba(57, 35, 8, 0.9);
-//   border-radius: 4px;
-//   -webkit-transition: border .2s ease-in-out;
-//   -o-transition: border .2s ease-in-out;
-//   transition: border .2s ease-in-out;
-//   color: darken(#e6e6e6, 15%);
-// }
 .thumb {
   display: block;
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
-  background-color: rgba(57, 35, 8, 0.7);
+  background-color: rgb(57, 35, 8);
+  opacity: 0.8;
   border: 1px solid rgba(57, 35, 8, 0.9);
   border-radius: 4px;
   -webkit-transition: border .2s ease-in-out;
@@ -193,30 +181,31 @@ h3 {
   color: darken(#e6e6e6, 15%);
 }
 .userBtn {
-    display: inline-block;
-    padding: 0px 50px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    color: #fff;
-    background-color: transparent;
-    border-color: lighten(#3C2409, 15%);
+  display: inline-block;
+  padding: 0px 50px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  background-color: transparent;
+  border-color: lighten(#3C2409, 15%);
 }
 .userBtn:hover {
   background-color: lighten(#3C2409, 10%);
   color: darken(#fff, 30%);
+  text-decoration: none;
 }
