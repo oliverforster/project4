@@ -2,10 +2,10 @@ angular.module('testApp', ['satellizer', 'angular-jwt', 'ui.router', 'ngResource
 .config(Router)
 .config(oauthConfig)
 
-oauthConfig.$inject = ['API_URL', '$authProvider', 'FACEBOOK_API_KEY']
-function oauthConfig(API_URL, $authProvider, FACEBOOK_API_KEY) {
+oauthConfig.$inject = ['$authProvider', 'FACEBOOK_API_KEY']
+function oauthConfig($authProvider, FACEBOOK_API_KEY) {
 $authProvider.facebook({
-  url: API_URL + '/auth/facebook',
+  url: '/auth/facebook',
   clientId: FACEBOOK_API_KEY
 });
 
