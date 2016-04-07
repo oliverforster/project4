@@ -2,11 +2,12 @@ angular.module('testApp', ['satellizer', 'angular-jwt', 'ui.router', 'ngResource
 .config(Router)
 .config(oauthConfig)
 
-oauthConfig.$inject = ['$authProvider', 'FACEBOOK_API_KEY']
-function oauthConfig($authProvider, FACEBOOK_API_KEY) {
+oauthConfig.$inject = ['$authProvider', 'FACEBOOK_API_KEY', '$window']
+function oauthConfig($authProvider, FACEBOOK_API_KEY, $window) {
 $authProvider.facebook({
   url: '/auth/facebook',
-  clientId: FACEBOOK_API_KEY
+  clientId: FACEBOOK_API_KEY,
+  redirectUri: $window.location.origin + '/'
 });
 
 $authProvider.tokenPrefix = null;
