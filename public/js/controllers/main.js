@@ -1,8 +1,8 @@
 angular.module('testApp')
   .controller('MainController', MainController);
 
-MainController.$inject = ['$http', 'tokenService', '$auth', 'User', '$state', 'API_URL'];
-function MainController($http, tokenService, $auth, User, $state, API_URL) {
+MainController.$inject = ['$http', 'tokenService', '$auth', 'User', '$state'];
+function MainController($http, tokenService, $auth, User, $state) {
   var self = this;
 
   self.all = []
@@ -14,7 +14,7 @@ function MainController($http, tokenService, $auth, User, $state, API_URL) {
   self.newRequest = function () {
     $http({
       method: "POST",
-      url: API_URL + "/api/tastekid",
+      url: "/api/tastekid",
       data: {request: this.request, user: this.currentUser}
     })
     .then(function(response) {
