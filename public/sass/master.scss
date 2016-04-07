@@ -111,7 +111,14 @@ nav {
   }
 }
 .logo {
-  background-color: black !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  width: 10%;
+  padding: 0px !important;
+  img {
+    height: inherit;
+    width: inherit;;
+    margin: 0px;
+  }
 }
 
 .active {
