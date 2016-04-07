@@ -33,6 +33,10 @@ function FoodController($http, tokenService, $state) {
   this.chooseFood = function (result) {
     this.chosen = result;
     $state.go('home')
-
+  }
+  this.searchHistory = function (postcode) {
+    this.postcode = postcode;
+    this.getFood();
+    $state.go('food')
   }
 }
