@@ -194,7 +194,7 @@ h3 {
 }
 .userBtn {
     display: inline-block;
-    padding: 0px 44px;
+    padding: 0px 50px;
     margin-bottom: 0;
     font-size: 14px;
     font-weight: 400;
@@ -212,4 +212,11 @@ h3 {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+    color: #fff;
+    background-color: transparent;
+    border-color: lighten(#3C2409, 15%);
+}
+.userBtn:hover {
+  background-color: lighten(#3C2409, 10%);
+  color: darken(#fff, 30%);
 }
