@@ -8,7 +8,7 @@ function facebook(req, res) {
   var params = {
     code: req.body.code,
     client_id: req.body.clientId,
-    client_secret: process.env.FACEBOOK_API_SECRET,
+    client_secret: "555d8a4e45e1c56e9757a76e50eff9ff",
     redirect_uri: config.appUrl + "/"
   };
 

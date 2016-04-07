@@ -10,7 +10,7 @@ function index(req, res) {
   var address = req.query.postcode
   var params  = {
     address: req.query.postcode,
-    key: process.env.GOOGLE_API_KEY
+    key: AIzaSyC5sCyvvW4u4Ii7mQ1l00n17TraWDgtbKk
   };
 
   if(cache[req.query.postcode]) {
@@ -36,7 +36,7 @@ function index(req, res) {
         qs: {
           location: response.results[0].geometry.location.lat + ',' + response.results[0].geometry.location.lng,
           radius: 1000,
-          key: process.env.GOOGLE_API_KEY,
+          key: AIzaSyC5sCyvvW4u4Ii7mQ1l00n17TraWDgtbKk,
           type: 'meal_takeaway'
         },
         json: true

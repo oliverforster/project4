@@ -29,7 +29,7 @@ function tasteKidGet(req, res) {
       qs: {
         q: search,
         info: 1,
-        k: process.env.TASTEKID_API_KEY
+        k: "217550-FinalPro-S2X7M2MK"
       },
       json: true
     })
