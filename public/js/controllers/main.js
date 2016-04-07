@@ -61,7 +61,8 @@ function MainController($http, tokenService, $auth, User, $state) {
   }
 
   this.searchHistory = function (tv) {
-    this.request = {first: tv};
+    var split = tv.split(", ")
+    this.request = {first: split[0], second: split[1]}
     this.newRequest();
     $state.go('television')
   }
