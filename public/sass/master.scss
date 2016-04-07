@@ -32,12 +32,16 @@ form {
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     opacity: 0.8;
+    width: 49%;
+  }
+  input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px #55e4fc inset;
   }
 
   .button {
     background-color: #ec62fc;
     color: #55e4fc;
-    border-radius: 100%;
+    width: 100%;
   }
 }
 
