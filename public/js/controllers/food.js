@@ -2,7 +2,7 @@ angular.module('testApp')
   .controller('FoodController', FoodController);
 
 FoodController.$inject = ['$http', 'tokenService', '$state'];
-function FoodController($http, tokenService, $state, ) {
+function FoodController($http, tokenService, $state) {
   var self = this;
   this.postcode = null;
   self.results = [];
