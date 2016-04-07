@@ -1,8 +1,8 @@
 angular.module('testApp')
   .controller('FoodController', FoodController);
 
-FoodController.$inject = ['$http', 'tokenService', '$state'];
-function FoodController($http, tokenService, $state) {
+FoodController.$inject = ['$http', 'tokenService', '$state', 'API_URL'];
+function FoodController($http, tokenService, $state, API_URL) {
   var self = this;
   this.postcode = null;
   self.results = [];
@@ -12,7 +12,7 @@ function FoodController($http, tokenService, $state) {
     this.currentUser = tokenService.getUser();
     $http({
       method: "GET",
-      url: "http://localhost:3000/api/food",
+      url: API_URL + "/api/food",
       params: { postcode: self.postcode, user: this.currentUser._id }
     })
     .then(function(response) {

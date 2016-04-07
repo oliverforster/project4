@@ -1,5 +1,5 @@
 angular.module('testApp', ['satellizer', 'angular-jwt', 'ui.router', 'ngResource', 'angular.filter'])
-.constant('API_URL', 'http://localhost:3000')
+.constant('API_URL', 'sofaking.herokuapp.com')
 .config(Router)
 .config(oauthConfig)
 
