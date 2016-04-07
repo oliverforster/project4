@@ -9,6 +9,7 @@ function UserController(User, $state, tokenService) {
 
   this.userPage = function () {
     this.currentUser = tokenService.getUser();
+    if(!!this.currentUser) {
     User.get({id: self.currentUser._id}).$promise.then(function (user) {
       user.tvHistory.forEach(function (tv) {
         pushIfNew(self.tvHistory, tv)
@@ -18,6 +19,7 @@ function UserController(User, $state, tokenService) {
       })
     });
     $state.go('user')
+  }
   }
   this.userPage();
 
