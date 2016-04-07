@@ -171,8 +171,7 @@ h3 {
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
-  background-color: rgb(57, 35, 8);
-  opacity: 0.8;
+  background-color: rgba(57, 35, 8, 0.8);
   border: 1px solid rgba(57, 35, 8, 0.9);
   border-radius: 4px;
   -webkit-transition: border .2s ease-in-out;
@@ -203,9 +202,13 @@ h3 {
   color: #fff;
   background-color: transparent;
   border-color: lighten(#3C2409, 15%);
+  transition: all 0.5s ease;
 }
 .userBtn:hover {
-  background-color: lighten(#3C2409, 10%);
+  // background-color: lighten(#3C2409, 10%);
+  background-color: rgb(201, 123, 29);
   color: darken(#fff, 30%);
   text-decoration: none;
+  opacity: 1;
+  transition: all 0.5s ease;
 }
