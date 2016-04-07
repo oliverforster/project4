@@ -60,6 +60,12 @@ function MainController($http, tokenService, $auth, User, $state) {
 
   }
 
+  this.searchHistory = function (tv) {
+    this.request = tv;
+    this.newRequest();
+    $state.go('television')
+  }
+
 
   return this;
 }
