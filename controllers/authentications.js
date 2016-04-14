@@ -5,11 +5,12 @@ var config = require('../config/app');
 var oauth = require('../config/oauth');
 
 function facebook(req, res) {
+  console.log(req.body);
   var params = {
     code: req.body.code,
     client_id: req.body.clientId,
     client_secret: process.env.FACEBOOK_API_SECRET,
-    redirect_uri: config.appUrl + "/"
+    redirect_uri: req.body.redirectUri
   };
 
   // step 1, we make a request to facebook for an access token

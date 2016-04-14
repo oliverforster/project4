@@ -14,7 +14,7 @@ app.set("views", __dirname + "/public/views");
 app.use(express.static(__dirname + '/public'));
 
 // Connect to database
-mongoose.connect(config.appUrl);
+mongoose.connect(config.databaseUrl);
 
 // Require routes
 var routes         = require('./config/routes');
