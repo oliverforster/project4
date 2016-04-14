@@ -6,6 +6,7 @@ var mongoose       = require('mongoose');
 var app            = express();
 var router         = require('./config/routes');
 var config         = require('./config/app');
+var cors           = require('cors')
 
 // Set default view engine and views directory
 app.set("view engine", "ejs");
