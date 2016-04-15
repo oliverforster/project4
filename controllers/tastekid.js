@@ -6,7 +6,6 @@ function tasteKidGet(req, res) {
 
   var first = req.body.request.first;
   var second = req.body.request.second;
-  var userId = req.body.user._id
 
   if(req.body.request.second) {
     console.log("Ping");
@@ -20,6 +19,7 @@ function tasteKidGet(req, res) {
     return res.status(200).json(cache[search]);
   }
   if(req.body.user) {
+    var userId = req.body.user._id
     User.findByIdAndUpdate(userId, { $push: { tvHistory: search.toString() }}, { new: true }, function(err, data){
       if(err)  res.status(500).json({ message: err });
     });
