@@ -1,7 +1,7 @@
 angular.module('testApp', ['satellizer', 'angular-jwt', 'ui.router', 'ngResource', 'angular.filter'])
 .config(Router)
 .config(oauthConfig)
-.constant('FACEBOOK_API_KEY', '252942775047687');
+.constant('FACEBOOK_API_KEY', '1061732307233108');
 
 oauthConfig.$inject = ['$authProvider', 'FACEBOOK_API_KEY']
 function oauthConfig($authProvider, FACEBOOK_API_KEY) {
