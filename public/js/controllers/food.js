@@ -13,7 +13,7 @@ function FoodController($http, tokenService, $state) {
     $http({
       method: "GET",
       url: "/api/food",
-      params: { postcode: self.postcode, user: this.currentUser._id }
+      params: { postcode: self.postcode, user: this.currentUser }
     })
     .then(function(response) {
       console.log(response);

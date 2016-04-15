@@ -19,7 +19,7 @@ function tasteKidGet(req, res) {
   if(cache[search]) {
     return res.status(200).json(cache[search]);
   }
-  if(req.body.user._id) {
+  if(req.body.user) {
     User.findByIdAndUpdate(userId, { $push: { tvHistory: search.toString() }}, { new: true }, function(err, data){
       if(err)  res.status(500).json({ message: err });
     });
